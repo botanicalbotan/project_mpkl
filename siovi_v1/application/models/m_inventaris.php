@@ -16,7 +16,7 @@ class M_inventaris extends CI_Model{
     }
 
     function get_data(){
-        $table = 'inventaris';
+        $table = 'tabel_inventaris';
         $primary_key = 'id_inventaris';
 
         $columns = array(
