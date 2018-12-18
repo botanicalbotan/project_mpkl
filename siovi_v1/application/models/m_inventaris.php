@@ -22,7 +22,7 @@ class M_inventaris extends CI_Model{
     }
 
     function get_data(){
-        $table = 'inventaris';
+        $table = 'tb_inventaris';
         $primary_key = 'id_inventaris';
 
         $columns = array(
