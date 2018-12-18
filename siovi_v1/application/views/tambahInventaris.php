@@ -43,6 +43,18 @@
                                     Tambah Inventaris
                             </a>
                         </li>
+
+  <li>
+
+                        <a href="<?php echo base_url('index.php/admin/sewa_inventaris')?>">
+
+                            <i class="glyphicon glyphicon-book"></i>
+
+                            Sewa Inventaris
+
+                        </a>
+
+                    </li>
                          <li>
                             <a href="#">
                                 <i class="glyphicon glyphicon-log-out"></i>
