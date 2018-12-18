@@ -46,6 +46,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="<?php echo base_url('index.php/admin/edit_inventaris2')?>">
+                            <i class="glyphicon glyphicon-edit"></i>
+                            Edit Inventaris
+                        </a>
+                    </li>
+                    <li>
                         <a href="<?php echo base_url('index.php/admin/logout')?>">
                             <i class="glyphicon glyphicon-log-out"></i>
                             Logout 
