@@ -22,6 +22,11 @@ class Admin extends CI_Controller{
         $this->load->view('tambahInventaris');
     }
 
+    function edit_inventaris(){
+        $data['data_inventaris'] = $this->m_inventaris->get_data_all();
+        $this->load->view('editInventaris2', $data);
+    }
+
    
     function logout(){
         $this->session->sess_destroy();
@@ -47,6 +52,29 @@ class Admin extends CI_Controller{
         
         $this->m_inventaris->tambah_data('inventaris',$array_data);
         $this->tambah_inventaris();
+    }
+
+    function proses_sewa_inventaris(){
+        $nama_penyewa = $this->input->post('nama_penyewa');
+        $nomor_identitas = $this->input->post('nomor_identitas');
+        $alamat_penyewa = $this->input->post('alamat_penyewa');
+        $jenis_barang = $this->input->post('jenis_barang');
+        $tanggal_sewa = $this->input->post('tanggal_sewa');
+        $tanggal_kembali = $this->input->post('tanggal_kembali');
+        $jenis_barang = $this->input->post('jenis_barang');
+        $tarif_sewa = $this->input->post('tarif_sewa');
+        $array_data = array(
+            'id_penyewa' => '',
+            'nama_penyewa' => $nama_penyewa,
+            'nomor_identitas' => $nomor_identitas,
+            'alamat_penyewa' => $alamat_penyewa,
+            'jenis_barang' => $jenis_barang,
+            'tanggal_sewa' => $tanggal_sewa,
+            'tanggal_kembali' => $tanggal_kembali,
+            'tarif_sewa' => $tarif_sewa,
+        );
+        $this->m_peminjaman->simpan_peminjaman($jenis_barang, $array_data);
+        $this->sewa_inventaris();
     }
 
     function tampil_datatables()
